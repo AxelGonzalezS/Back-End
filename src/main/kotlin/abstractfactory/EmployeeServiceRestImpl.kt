@@ -1,8 +1,9 @@
-package abstractfactory
+package abstractFactory
 
 class EmployeeServiceRestImpl: IEmployeeService {
-    private val employees = listOf("REST-Juan Carlos", "REST-Moises", "REST-Sandra")
+    private val employee = listOf("Juan Carlos", "Moises", "Sandra")
+
     override fun getEmployee(): List<String> {
-        return this.employees
+        return this.employee
     }
 }

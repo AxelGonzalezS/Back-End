@@ -1,6 +1,6 @@
 package singleton
-import properties.PropertiesUtil.loadProperty
 
+import properties.PropertiesUtil.loadProperty
 
 class Singleton {
     private val _CONFIGURATION_PROP = "properties/singleton"

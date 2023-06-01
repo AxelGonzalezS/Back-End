@@ -1,9 +1,6 @@
 package bridge
 
-import kotlin.jvm.Throws
-
 interface IMessageEncrypt {
-
     @Throws(Exception::class)
-    fun encryptMessage(message: String?, password:String?):String?
+    fun encryptMessage(message: String?, password: String?): String?
 }

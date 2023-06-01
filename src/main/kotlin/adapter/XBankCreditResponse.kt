@@ -1,5 +1,5 @@
 package adapter
 
- class XBankCreditResponse{
-     var approval: Boolean=false
- }
+class XBankCreditResponse{
+    var approval: Boolean=false
+}

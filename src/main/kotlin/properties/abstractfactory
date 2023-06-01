@@ -1,2 +1,2 @@
-#serviceProductImplClass abstractfactory.WSServiceStackImpl
-serviceProductImplClass abstractfactory.RestServiceImpl
+serviceProductImplClass abstractFactory.WSServiceStackImpl
+#serviceProductImplClass abstractFactory.RestServiceImpl

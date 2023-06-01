@@ -9,8 +9,8 @@ class Employee {
     private lateinit var contacts: List<Contact>
 
     private constructor(
-        name: String?, age: Int, gender: String?, address: Address?,
-        phones: List<Phone>, contacts: List<Contact>
+            name: String?, age: Int, gender: String?, address: Address?,
+            phones: List<Phone>, contacts: List<Contact>
     ) {
         this.name = name!!
         this.age = age
@@ -56,37 +56,37 @@ class Employee {
         }
 
         fun setAddress(
-            address: String?, city: String?,
-            country: String?, cp: String?
+                address: String?, city: String?,
+                country: String?, cp: String?
         ): EmployeeBuilder {
             _address = Address(address, city, country, cp)
             return this
         }
 
         fun addPhones(
-            phoneNumber: String?, ext: String?,
-            phoneType: String?
+                phoneNumber: String?, ext: String?,
+                phoneType: String?
         ): EmployeeBuilder {
             phones.add(Phone(phoneNumber, ext, phoneType))
             return this
         }
 
         fun addContacts(
-            name: String?, phoneNumber: String?,
-            ext: String?, phoneType: String?, address: String?, city: String?,
-            country: String?, cp: String?
+                name: String?, phoneNumber: String?,
+                ext: String?, phoneType: String?, address: String?, city: String?,
+                country: String?, cp: String?
         ): EmployeeBuilder {
             contacts.add(
-                Contact(
-                    name, Phone(phoneNumber, ext, phoneType), Address(address, city, country, cp)
-                )
+                    Contact(
+                            name, Phone(phoneNumber, ext, phoneType), Address(address, city, country, cp)
+                    )
             )
             return this
         }
 
         fun addContacts(
-            name: String?, phoneNumber: String?,
-            ext: String?, phoneType: String?
+                name: String?, phoneNumber: String?,
+                ext: String?, phoneType: String?
         ): EmployeeBuilder {
             contacts.add(Contact(name=name, phone =  Phone(phoneNumber, ext, phoneType), address = null))
             return this
@@ -95,6 +95,5 @@ class Employee {
         override fun  build(): Employee {
             return Employee(name, age, gender, _address, phones, contacts = contacts)
         }
-
     }
 }

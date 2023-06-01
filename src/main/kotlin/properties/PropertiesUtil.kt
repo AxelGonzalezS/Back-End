@@ -2,8 +2,6 @@ package properties
 
 import java.util.*
 
-
-
 object PropertiesUtil {
     fun loadProperty(propertiesURL: String?): Properties? {
         return try {

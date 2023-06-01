@@ -1,4 +1,4 @@
-package abstractfactory
+package abstractFactory
 
 class WSServiceStackImpl: IServiceStackAbstractFactory {
     override fun getEmployeeService(): IEmployeeService = EmployeeServiceWSImpl()

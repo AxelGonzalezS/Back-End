@@ -1,4 +1,4 @@
-package abstractfactory
+package abstractFactory
 
 interface IServiceStackAbstractFactory {
     fun getEmployeeService(): IEmployeeService

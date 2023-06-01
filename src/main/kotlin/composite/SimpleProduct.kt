@@ -1,5 +1,6 @@
 package composite
 
- class SimpleProduct (name:String,  price: Double, val brand: String):
-    AbstractProduct (name, price) {
+class SimpleProduct(name: String?, price: Double, protected var brand: String) :
+        AbstractProduct(name!!, price) {
+    /** GET and SET  */
 }

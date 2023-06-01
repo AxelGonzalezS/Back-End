@@ -1,5 +1,5 @@
 package adapter
 
 class YBankCreditApproveResult {
-     var approved: Boolean= false
+    var approved: Boolean= false
 }

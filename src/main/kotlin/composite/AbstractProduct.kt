@@ -1,5 +1,5 @@
 package composite
 
-abstract class AbstractProduct (val name: String, private val price:Double) {
-    open fun getPrice() = price
+abstract class AbstractProduct(var name: String, open var price: Double) {
+    /** GET and SET  */
 }

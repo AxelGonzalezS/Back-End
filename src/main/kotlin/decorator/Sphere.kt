@@ -1,7 +1,5 @@
 package decorator
 
-
-
 class Sphere(tree: IChristmasTree) : TreeDecorator(tree) {
 
     override fun decorate(): String {

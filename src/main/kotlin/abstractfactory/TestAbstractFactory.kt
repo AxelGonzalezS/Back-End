@@ -1,6 +1,4 @@
-package abstractfactory
-
-
+package abstractFactory
 
 fun main(){
     val factory: IServiceStackAbstractFactory? = ServiceStackAbstractFactory.createServiceFactory()

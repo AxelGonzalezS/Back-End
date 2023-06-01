@@ -1,6 +1,5 @@
 package adapter
 
-
 fun main() {
 
     val request = BankCreditRequest("Ambrosio Cardoso", 1000.00)
@@ -8,7 +7,7 @@ fun main() {
     val xBank: IBankAdapter = XBankCreditAdaptee()
     val xresponse = xBank.sendCreditRequest(request)
     println(
-        """
+            """
             ${"xBank approved > " + xresponse.approved}
             
             """.trimIndent()
@@ -16,7 +15,7 @@ fun main() {
     val yBank: IBankAdapter = YBankCreditAdaptee()
     val yresponse = yBank.sendCreditRequest(request)
     println(
-        """
+            """
             ${"yBank approved > " + yresponse.approved}
             
             """.trimIndent()

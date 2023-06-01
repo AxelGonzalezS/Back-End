@@ -15,9 +15,9 @@ fun main() {
     //--- insert new product
     print("Introduzca el producto: ")
 
-    val description = readln()
+    val description = readLine()!!
     print ("Introduzca el precio: ")
-    val price =  readln().toDouble()
+    val price =  readLine()!!.toDouble()
 
     val product= Product(id=0, description = description,price)
     productDAO.saveProduct(product)

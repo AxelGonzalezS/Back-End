@@ -1,9 +1,8 @@
 package prototype
 
-
 data class PriceList(
-    var listName: String,
-    var products: ArrayList<ProductItem>
+        var listName: String,
+        var products: ArrayList<ProductItem>
 ): IPrototype<PriceList>{
     override fun clone(): Any {
         return PriceList(listName=listName, products=this.products)

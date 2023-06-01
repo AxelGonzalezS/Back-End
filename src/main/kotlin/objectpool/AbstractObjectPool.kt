@@ -18,15 +18,15 @@ abstract class AbstractObjectPool <T : IPooledObject>: IObjectPool<T> {
             maxInstances: Int,
             waitTime: Int,
             poolableObjectFactory: IPoolableObjectFactory<T>?
-        ) {
-            println("=========== STARTING ============")
-            this.minInstances = minInstances
-            this.maxInstances = maxInstances
-            this.waitTime = waitTime
-            this.poolableObjectFactory = poolableObjectFactory
-            initPool()
-            println("=========== FINISH ============")
-            println()
+    ) {
+        println("=========== STARTING ============")
+        this.minInstances = minInstances
+        this.maxInstances = maxInstances
+        this.waitTime = waitTime
+        this.poolableObjectFactory = poolableObjectFactory
+        initPool()
+        println("=========== FINISH ============")
+        println()
     }
 
     private fun initPool() {
@@ -49,8 +49,8 @@ abstract class AbstractObjectPool <T : IPooledObject>: IObjectPool<T> {
                 val first = freeStack.pop()
                 first.used = true
                 println(
-                    "Provisioning1 Object > "
-                            + first.uuid.toString()
+                        "Provisioning1 Object > "
+                                + first.uuid.toString()
                 )
                 useStack.push(first)
                 return first.pooledObject
@@ -60,8 +60,8 @@ abstract class AbstractObjectPool <T : IPooledObject>: IObjectPool<T> {
                     val returnObject: PooledObjectStatus<T> = createNewPooledObject()
                     returnObject.used = true
                     println(
-                        "Provisioning2 Object > "
-                                + returnObject.uuid.toString()
+                            "Provisioning2 Object > "
+                                    + returnObject.uuid.toString()
                     )
                     useStack.push(returnObject)
                     returnObject.pooledObject
@@ -90,15 +90,15 @@ abstract class AbstractObjectPool <T : IPooledObject>: IObjectPool<T> {
                     returnObject!!.used = true
                     useStack.push(returnObject)
                     println(
-                        "Provisioning3 Object > "
-                                + returnObject!!.uuid.toString()
+                            "Provisioning3 Object > "
+                                    + returnObject!!.uuid.toString()
                     )
                     return returnObject!!.pooledObject
                 }
             }
             if (returnObject == null || returnObject!!.used) {
                 if (waitTime != 0 && System.currentTimeMillis()
-                    >= future.timeInMillis
+                        >= future.timeInMillis
                 ) {
                     throw PoolException("Tiempo de espera agotado")
                 }
@@ -115,7 +115,7 @@ abstract class AbstractObjectPool <T : IPooledObject>: IObjectPool<T> {
         val pooled = PooledObjectStatus(newObject)
         fullStack.push(pooled)
         println(
-            "New PoolableObject{UUID=" + pooled.uuid.toString() + ", poolSize=" + fullStack.size + "}"
+                "New PoolableObject{UUID=" + pooled.uuid.toString() + ", poolSize=" + fullStack.size + "}"
         )
         return pooled
     }
@@ -128,14 +128,14 @@ abstract class AbstractObjectPool <T : IPooledObject>: IObjectPool<T> {
                     useStack.remove(item)
                     item.used = false
                     println(
-                        "Object returned > "
-                                + item.uuid.toString()
+                            "Object returned > "
+                                    + item.uuid.toString()
                     )
                     return
                 } else {
                     println(
-                        "Object Invalidate ==> "
-                                + item.uuid.toString()
+                            "Object Invalidate ==> "
+                                    + item.uuid.toString()
                     )
                     pooledObject.invalidate()
                     fullStack.remove(item)

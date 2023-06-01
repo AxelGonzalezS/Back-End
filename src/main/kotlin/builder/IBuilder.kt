@@ -1,5 +1,5 @@
 package builder
 
-interface IBuilder<T> {
-    fun build (): T
+interface IBuilder <T> {
+    fun build():T
 }
